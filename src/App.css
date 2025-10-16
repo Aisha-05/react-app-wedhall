@@ -1,5 +1,5 @@
-.grid-container{
-  display: grid;
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+.grid-container{  display: grid;
   grid-template-columns: 250px 1fr;  
   height: 100vh;
 }
@@ -19,22 +19,79 @@ body{
 
 .sidebar .logo{
   width: 100%;
-  height: 60px;
+  height: 90px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Poppins', sans-serif;
-  box-shadow: 0 0 6px rgba(0, 0, 0, 0.05);
+  font-family: 'Dancing Script', cursive;
+  margin-bottom: 20px;
+  /* box-shadow: 0 0 6px rgba(0, 0, 0, 0.05); */
 }
 .sidebar .logo a{
-  position: relative;
   color: #9D735B;
-  font-size: 25px;
-  font-weight: 500;
-  margin-left: 70px;
-  line-height: 60px;
+  font-size: 50px;
+  font-weight: 300;
   text-decoration: none;
+  letter-spacing: 2px;
 }
+
+/* ----- MENU ----- */
+
+.sidebar .menu {
+  flex: 1;
+  padding-top: 20px;
+}
+
+.sidebar .menu ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar .menu li {
+  margin: 10px 0;
+}
+
+.sidebar .menu a, .log-out a{
+  display: flex;
+  align-items: center;
+  color: #848484;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 15px 30px;
+  margin: 15px 20px;
+  transition: 0.3s ease;
+  border-radius: 20px;
+}
+
+/* Icon style */
+.sidebar .menu a svg, .log-out a svg{
+  margin-right: 10px;
+  font-size: 18px;
+  color: #848484;
+  transition: 0.3s ease;
+}
+/* Hover effect */
+.sidebar .menu a:hover {
+  background-color: #9D735B;
+  color: white;
+  box-shadow:  0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar .menu a:hover svg {
+  color: white;
+}
+
+/* ----- LOG OUT ----- */
+
+/* .sidebar .log-out {
+  text-align: center;
+  padding: 15px 0;
+  color: #848484;
+  font-size: 18px;
+  margin: 10px;
+} */
+
 .main-area {
   display: grid;
   grid-template-rows: 80px 1fr; /* Topbar + content */

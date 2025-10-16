@@ -1,10 +1,10 @@
 import React from 'react'
 import '../App.css'
-import { FaUser, FaListAlt, FaBuilding, FaHistory } from "react-icons/fa";
+import { FaUser, FaListAlt, FaBuilding, FaHistory, FaSignOutAlt} from "react-icons/fa";
 function Sidebar() {
   return (
     <div className="sidebar">
-        <div className="logo"><a>WedHall</a></div>
+        <div className="logo"><a href='#'>WedHall</a></div>
         <div className="menu">
             <ul>
               <li><a href="#"><FaUser /> My Profile</a></li>
@@ -13,7 +13,7 @@ function Sidebar() {
               <li><a href="#"><FaHistory /> History</a></li>
             </ul>
         </div>
-        <div className="log-out">Log out</div>
+        <div className="log-out"><a href="#"><FaSignOutAlt/>Log out</a></div>
     </div>
   )
 }
