@@ -25,7 +25,6 @@ body{
   justify-content: center;
   font-family: 'Dancing Script', cursive;
   margin-bottom: 20px;
-  /* box-shadow: 0 0 6px rgba(0, 0, 0, 0.05); */
 }
 .sidebar .logo a{
   color: #9D735B;
@@ -35,7 +34,7 @@ body{
   letter-spacing: 2px;
 }
 
-/* ----- MENU ----- */
+/*  MENU  */
 
 .sidebar .menu {
   flex: 1;
@@ -73,7 +72,7 @@ body{
 }
 /* Hover effect */
 .sidebar .menu a:hover {
-  background-color: #9D735B;
+  background-color: #9d735ba2;
   color: white;
   box-shadow:  0 4px 6px rgba(0, 0, 0, 0.2);
 }
@@ -82,35 +81,184 @@ body{
   color: white;
 }
 
-/* ----- LOG OUT ----- */
-
-/* .sidebar .log-out {
-  text-align: center;
-  padding: 15px 0;
-  color: #848484;
-  font-size: 18px;
-  margin: 10px;
-} */
-
 .main-area {
   display: grid;
-  grid-template-rows: 80px 1fr; /* Topbar + content */
+  grid-template-rows: 80px 1fr; /* Topbar + content + footer*/
+  gap: 30px;
   background-color: #f1f5f9;
 }
 
+/* TOPBAR */
 .topbar{
-  position: relative;
   background: #9D735B;
+  height: 80px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 60px;
 }
 
-.topbar .user{
-  display: grid;
-  grid-template-columns: 50px 1fr;
+.topbar .user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
-/* .topbar img{
-  position: absolute;
-  margin-top: 20px;
-  right: 140px;
-  width: 40px;
+
+.topbar .user-info p, .topbar .user-info h4{
+  margin: 0;
+  font-size: 14px;
+}
+
+.topbar .user-img {
   border-radius: 50%;
-} */
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+
+/* PROFILE BOX */
+
+.profile-box {
+  padding: 20px 40px;
+  flex: 1;
+}
+
+.profile-box > p {
+  padding-left: 27px;
+  color: #9d735b;
+  font-size: 25px;
+  padding: 20px;
+  margin: 0;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background: linear-gradient(to left, #9D735B, #fce4d1);
+;
+}
+
+.profile-card {
+  background-color: white;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  padding: 30px;
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.profile-header .profile-info{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.profile-header .profile-info p, .profile-header .profile-info h3{
+  margin: 3px 0;
+  font-size: 15px;
+  color: #333;
+}
+
+.profile-header .profile-info img {
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+}
+
+.profile-header .edit-btn {
+  background-color: #9d735bde;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all .3s;
+}
+
+.profile-header .edit-btn:hover{
+  background-color: #9d735b;
+  border: 1px solid #9d5b5bee;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+.profile-details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px 30px;
+  margin-top: 20px;
+}
+
+.field label {
+  display: block;
+  color: #9D735B;
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 5px;
+}
+
+.field input {
+  width: 90%;
+  padding: 10px;
+  margin-right: 15px;
+  background: #f5f1f1;
+  border: none;
+  border-radius: 6px;
+  outline: none;
+  font-size: 15px;
+}
+
+.edit-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.save-btn {
+  background-color: #9d735bae;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ;
+}
+
+.save-btn:hover{
+  background-color: #5e9d5bae;
+  border: 1px solid #5e9d5bee;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+.cancel-btn {
+  background-color: #9d735bae;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.cancel-btn:hover{
+  background-color: #9d5b5be1;
+  border: 1px solid #9d5b5bee;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ;
+}
+
+.readonly * {
+  user-select: none;
+  cursor: default;
+}
+
+/* FOOTER */
+
+  .footer {
+  text-align: center;
+  padding: 10px 0;
+  font-size: 14px;
+  color: #999;
+  background-color: #fff;
+  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.05);
+}
