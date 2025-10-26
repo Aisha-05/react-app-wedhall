@@ -9,7 +9,7 @@ function RequestsHistory({ owner }) {
       
       <div className="dashboard">
         <h2 style={{ color: "#825e39" }}>Requests & History</h2>
-        <p>Here you can view all your booking requests and their history.</p>
+        <p>booking requests history.</p>
 
         {/* later you can add a table or cards here */}
       </div>

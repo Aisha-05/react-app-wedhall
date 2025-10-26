@@ -3,7 +3,7 @@
 body {
   margin: 0;
   padding: 0;
-  background: #fff8f8;  
+  background: #df2323;  
 }
 
 .app-container {
@@ -246,141 +246,150 @@ p.reviews {
   padding-right: 20px;
 }
 
-/* === SECTION TWO (Hall List) === */
+/* === Hall List Section === */
 .section-two {
   flex: 1.5;
-  background-color: #ffffff42;
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.3);
   border-radius: 16px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-  padding: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  padding: 30px;
   overflow: hidden;
 }
 
-/* === Hall List styling (placeholder) === */
+/* Section Title */
+.section-two h2 {
+  text-align: center;
+  color: #825e39;
+  font-weight: 700;
+  margin-bottom: 1.8rem;
+  letter-spacing: 0.5px;
+}
+
+/* === Grid Layout === */
 .halls-container {
-  display: grid !important;
-  grid-template-columns:  repeat( auto-fill, minmax(300px,1fr)  ) !important;
-  gap: 1rem; 
-  align-items: stretch !important;  
-  margin: 2rem;
-  padding: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 24px;
+  justify-items: center;
 }
 
-/* Card */
-.Card{
-  border: none;
-  background-color: transparent !important;
-  /* flex: 1 1 250px !important; */
-  .image{
-    border-radius: 1rem;
-  }
-}
-
-.content {
+/* === Hall Card === */
+.hall-card {
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 14px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  overflow: hidden;
+  width: 100%;
+  max-width: 320px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  color: #9d735b;
-  .title {
-    font-weight: bold;
-  }
-  .price {
-    font-weight: bold;
-  }
-}
-
-.btn-container {
-  margin: 1rem;
-  /* background-color: #9d735b; */
-  width: 100%;
-  display: flex;
-  justify-content: end;
-  .btn {
-    margin-right: 1rem;
-    color: white;
-    background-color: #9d735b !important;
-    border: none;
-  }
-}
-.tirating {
-  margin: 5px;
-  display: flex;
-  /* background-color: #9d735b; */
-  width: 100%;
-  justify-content: flex-start;
-}
-
-.description {
-  margin: 5px;
-  width: 100%;
-  display: flex;
-  justify-content: flex-start;
-  text-align: start;
-  /* background-color: #9d735b; */
-}
-.price-container {
-  margin: 5px;
-  width: 100%;
-  display: flex;
-  justify-content: flex-start;
-}
-
-.location {
-  margin: 5px;
-  width: 100%;
-  display: flex;
   justify-content: space-between;
 }
 
-/* Card */
-
-.rate{
-  font-size: smaller;
+.hall-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
 }
 
-/* Popup */
-.popup-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.popup {
-  background: white;
-  padding: 30px;
-  border-radius: 12px;
-  width: 350px;
-}
-
-.popup input[type="text"],
-.popup input[type="email"] {
+/* === Hall Image === */
+.hall-image {
   width: 100%;
-  margin-bottom: 10px;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
+  height: 180px;
+  object-fit: cover;
+  border-top-left-radius: 14px;
+  border-top-right-radius: 14px;
 }
 
-.popup-buttons {
+/* === Content === */
+.hall-content {
+  padding: 15px 18px;
   display: flex;
-  justify-content: space-between;
-  margin-top: 15px;
+  flex-direction: column;
+  gap: 6px;
 }
 
-.save-btn {
-  background: #a97d5d;
+.hall-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #825e39;
+}
+
+.hall-location {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.hall-price {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #6c4a2c;
+}
+
+.hall-description {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 4px;
+  line-height: 1.4;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  display: box; /* fallback for future compatibility */
+
+  /* ✅ New standardized syntax */
+  line-clamp: 2;
+
+  /* ✅ WebKit vendor prefix (currently required for it to work) */
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+
+/* === Edit Button === */
+.hall-btn-container {
+  padding: 10px 18px 16px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.hall-btn {
+  background-color: #825e39;
   color: white;
   border: none;
-  padding: 8px 15px;
-  border-radius: 6px;
+  border-radius: 8px;
+  padding: 6px 16px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-.cancel-btn {
-  background: #ccc;
-  border: none;
-  padding: 8px 15px;
-  border-radius: 6px;
+.hall-btn:hover {
+  background-color: #6c4a2c;
+}
+
+/* === Add New Hall Link === */
+.add-hall-link {
+  display: inline-block;
+  margin-top: 1.5rem;
+  text-decoration: underline;
+  color: #825e39;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.add-hall-link:hover {
+  color: #6c4a2c;
+}
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+  .section-two {
+    padding: 20px;
+  }
+
+  .hall-card {
+    max-width: 100%;
+  }
 }
