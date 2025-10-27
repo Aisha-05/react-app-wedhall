@@ -8,7 +8,7 @@ import HallList from "../Components/HallList";
 // import Rating from "./Components/Rating";
 import ProfilePopup from "../Components/ProfilePopUp";
 
-function Dashboard({owner}){
+function Dashboard({owner, setOwner}){
 
   const statsData = {
     rating: 4.2,

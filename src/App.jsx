@@ -16,7 +16,7 @@ function App() {
   return (
       <Routes>
         <Route path="/profile" element={<Dashboard owner={owner} />} />
-        <Route path="/" element={<Dashboard owner={owner} />} />
+        <Route path="/" element={<Dashboard owner={owner} setOwner={setOwner}/>} />
         <Route path="/requests" element={<RequestsHistory owner={owner} />} />
       </Routes>
   );
