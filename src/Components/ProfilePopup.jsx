@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../App.css";
+import "./ProfilePopup.css";
 
 function ProfilePopup({ owner, setOwner, onClose }) {
   const [tempOwner, setTempOwner] = useState(owner);

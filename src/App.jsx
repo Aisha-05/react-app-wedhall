@@ -11,6 +11,7 @@ function App() {
     wilaya: "Algiers",
     phoneNum: "0546789843",
     picture: profilePic,
+    rating: 4.5,
   });
 
   return (

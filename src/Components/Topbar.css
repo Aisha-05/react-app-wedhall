@@ -1,0 +1,87 @@
+.topbar {
+  display: flex;
+    position: sticky;
+  top: 0;
+  z-index: 999;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 28px;
+  background-color: #9D735B;
+}
+
+/* ===== Left section (Logo) ===== */
+.topbar-left .logo {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Dancing Script', cursive;
+}
+
+.topbar-left .logo a{
+  color: #fff8f8;
+  font-size: 40px;
+  font-weight: 300;
+  text-decoration: none;
+  letter-spacing: 2px;
+}
+
+/* ===== Right section ===== */
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+/* ===== Navbar ===== */
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-item a{
+  background: none;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.906);
+  cursor: pointer;  
+  padding: 10px 15px;
+  border-radius: 30px;
+  transition: color 0.3s ease;
+}
+
+.nav-item a:hover {
+  background: #f5f5dc32;
+}
+
+/* ===== User area (avatar + name) ===== */
+.user-area {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.topbar-img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1.5px solid #a58469;
+}
+
+.user-text h4 {
+  font-size: 13px;
+  color: #fff8f8;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+.user-text p {
+  font-size: 12px;
+  font-weight: 400;
+  color: #0000009f;
+  margin: 0;
+}
