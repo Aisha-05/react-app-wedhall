@@ -1,0 +1,204 @@
+.requests-history {
+  padding: 20px 40px;
+  background: #fdfaf7;
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+}
+
+.page-title {
+  color: #825e39;
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+
+/* === Table Sections === */
+.table-section {
+  background: #fff;
+  padding: 20px;
+  border-radius: 16px;
+  /* box-shadow: 0 4px 15px rgba(0,0,0,0.08); */
+  margin-bottom: 25px;
+}
+
+.table-section h3 {
+  color: #6c4a2c;
+  margin-bottom: 12px;
+}
+
+.empty-msg {
+  text-align: center;
+  color: #8b7b6f;
+  font-style: italic;
+}
+
+/* === Scrollable Table === */
+.table-wrapper {
+  max-height: 220px;
+  overflow-y: auto;
+  border-radius: 8px;
+}
+
+/* scrollbar style inside table */
+.table-wrapper::-webkit-scrollbar {
+  width: 6px;
+}
+.table-wrapper::-webkit-scrollbar-thumb {
+  background-color: #c3a17d;
+  border-radius: 4px;
+}
+.table-wrapper::-webkit-scrollbar-track {
+  background-color: #f4efeb;
+}
+
+/* === Table Style === */
+.styled-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.styled-table th {
+  background: #f4ede8;
+  color: #6c4a2c;
+  text-align: left;
+  padding: 10px 12px;
+  font-weight: 600;
+}
+
+.styled-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid #eee;
+  color: #3e2e1c;
+}
+
+.styled-table tr:hover {
+  background: #f9f5f2;
+}
+
+/* === Action Buttons === */
+.action-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.accept, .reject {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: transform 0.2s ease, color 0.2s;
+}
+
+.accept {
+  color: #4caf50;
+}
+.accept:hover {
+  transform: scale(1.2);
+}
+
+.reject {
+  color: #e74c3c;
+}
+.reject:hover {
+  transform: scale(1.2);
+}
+
+/* === Status Badge === */
+.status.completed {
+  background: #d6eadf;
+  color: #31764c;
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* === Confirmation Modal === */
+.confirm-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.confirm-box {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px 28px;
+  /* box-shadow: 0 6px 20px rgba(0,0,0,0.15); */
+  text-align: center;
+  max-width: 350px;
+  animation: fadeIn 0.25s ease;
+}
+
+.confirm-box h4 {
+  color: #825e39;
+  margin-bottom: 8px;
+}
+
+.confirm-box p {
+  color: #4a3a2a;
+  margin-bottom: 20px;
+}
+
+.confirm-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.confirm-buttons .yes {
+  background: #e74c3c;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.3s;
+}
+.confirm-buttons .yes:hover {
+  background: #c0392b;
+}
+
+.confirm-buttons .no {
+  background: #ddd;
+  color: #333;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.3s;
+}
+.confirm-buttons .no:hover {
+  background: #bbb;
+}
+
+/* fade animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+
+
+/* Add spacing between the two tables */
+.requests-history-section {
+  margin-bottom: 30px; /* space between sections */
+}
+
+/* Ensure bottom padding so the scroll area doesn’t cut off the last table */
+.dashboard {
+  padding-bottom: 60px;
+}
+
+/* Optional: consistent spacing and smooth scroll feel */
+.dashboard {
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}

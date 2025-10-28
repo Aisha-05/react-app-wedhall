@@ -19,21 +19,21 @@ body {
 }
 
 /* For Chrome, Edge, Safari */
-.dashboard::-webkit-scrollbar {
+/* .dashboard::-webkit-scrollbar {
   width: 8px;
 }
 
 .dashboard::-webkit-scrollbar-track {
-  background: #f3ece6; /* soft beige */
+  background: #f3ece6; 
   border-radius: 10px;
 }
 
 .dashboard::-webkit-scrollbar-thumb {
-  background: #b8936c; /* medium coffee brown */
+  background: #b8936c; 
   border-radius: 10px;
   transition: background 0.3s ease;
 }
 
 .dashboard::-webkit-scrollbar-thumb:hover {
-  background: #825e39; /* darker brown on hover */
-}
+  background: #825e39; 
+} */

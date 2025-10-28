@@ -35,12 +35,14 @@ function ProfilePopup({ owner, setOwner, onClose }) {
         <input type="text" name="wilaya" value={tempOwner.wilaya} onChange={handleChange} />
         <label>Profile Picture</label>
         <input type="file" accept="image/*" onChange={handleImageChange} />
-
+        
         <div className="popup-buttons">
           <button onClick={handleSave} className="save-btn">Save</button>
           <button onClick={onClose} className="cancel-btn">Cancel</button>
         </div>
+
       </div>
+
     </div>
   );
 }
