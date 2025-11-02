@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Dashboard from "./pages/Dashboard";
-import RequestsHistory from "./pages/RequestsHistory";
+import { RequestsProvider } from "./context/RequestsProvider";
+import RequestsPage from "./pages/RequestsPage";
+import HistoryPage from "./pages/HistoryPage";
 import profilePic from "./images/profilepic.jpg";
 
 function App() {
@@ -15,11 +17,14 @@ function App() {
   });
 
   return (
+    <RequestsProvider>
       <Routes>
-        <Route path="/profile" element={<Dashboard owner={owner} />} />
-        <Route path="/" element={<Dashboard owner={owner} setOwner={setOwner}/>} />
-        <Route path="/requests" element={<RequestsHistory owner={owner} />} />
+        <Route path="/profile" element={<Dashboard owner={owner} setOwner={setOwner}/>} />
+        <Route path="/" element={<Dashboard owner={owner} setOwner={setOwner}/>} /> 
+        <Route path="/requests" element={<RequestsPage owner={owner} />} />
+        <Route path="/history" element={<HistoryPage owner={owner} />} />
       </Routes>
+      </RequestsProvider>
   );
 }
 

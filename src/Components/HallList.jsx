@@ -17,6 +17,11 @@ function HallsList({ halls = [], setHalls, limit = 4 }) {
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
+
+    if (name === "price") {
+      if (!/^\d*$/.test(value)) return; // only digits
+    }
+
     setFormData({ ...formData, [name]: value });
   };
 
@@ -38,7 +43,8 @@ function HallsList({ halls = [], setHalls, limit = 4 }) {
     const newHall = {
       id: Date.now(),
       ...formData,
-      rating: 0, // clients rate later
+      price: formData.price ? `${formData.price} DZD` : "",
+      rating: 0,
     };
 
     setHalls([...halls, newHall]);
@@ -51,15 +57,13 @@ function HallsList({ halls = [], setHalls, limit = 4 }) {
       <div className="section-header">
         <h2>My Halls</h2>
         {halls.length > 4 && (
-          <Link to="/halls" className="see-all">
-            See All
-          </Link>
+          <Link to="/halls" className="see-all">See All</Link>
         )}
       </div>
 
       <div className="halls-container">
         {limitedHalls.map((hall) => (
-          <OneHall key={hall.id} hall={hall} />
+          <OneHall key={hall.id} hall={hall} setHalls={setHalls} />
         ))}
 
         <div className="add-hall-box" onClick={() => setShowForm(true)}>
@@ -67,7 +71,6 @@ function HallsList({ halls = [], setHalls, limit = 4 }) {
         </div>
       </div>
 
-      {/* === Popup Overlay === */}
       {showForm && (
         <div className="popup-overlay">
           <div className="popup-content">
@@ -75,29 +78,17 @@ function HallsList({ halls = [], setHalls, limit = 4 }) {
 
             <form onSubmit={handleSubmit} className="popup-form">
               <label>Hall Name</label>
-              <input
-                name="name"
-                value={formData.name}
-                onChange={handleInputChange}
-                required
-                placeholder="e.g. La Belle Étoile"
-              />
+              <input name="name" value={formData.name} onChange={handleInputChange} required />
 
               <label>Location</label>
-              <input
-                name="location"
-                value={formData.location}
-                onChange={handleInputChange}
-                required
-                placeholder="e.g. Algiers, Hydra"
-              />
+              <input name="location" value={formData.location} onChange={handleInputChange} required />
 
-              <label>Price</label>
+              <label>Price (DZD)</label>
               <input
                 name="price"
                 value={formData.price}
                 onChange={handleInputChange}
-                placeholder="e.g. 1500 DZD"
+                placeholder="Digits only"
               />
 
               <label>Description</label>
@@ -106,7 +97,6 @@ function HallsList({ halls = [], setHalls, limit = 4 }) {
                 value={formData.description}
                 onChange={handleInputChange}
                 rows="3"
-                placeholder="Brief description about the hall..."
               ></textarea>
 
               <label>Upload Image</label>
