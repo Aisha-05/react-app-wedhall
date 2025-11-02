@@ -11,6 +11,11 @@ export const RequestsProvider = ({ children }) => {
     { id: 4, client: "mes Wilson", hall: "Dream Hall", phone: "0798823456", from: "2025-12-01", to: "2025-12-02" },
     { id: 5, client: "es Wilson", hall: "Dream Hall", phone: "0798823456", from: "2025-12-01", to: "2025-12-02" },
     { id: 6, client: "s Wilson", hall: "Dream Hall", phone: "0798823456", from: "2025-12-01", to: "2025-12-02" },
+    { id: 7, client: "Sam Wilson", hall: "Dream Hall", phone: "0798823456", from: "2025-12-01", to: "2025-12-02" },
+    { id: 8, client: "Sam Wilson", hall: "Dream Hall", phone: "0798823456", from: "2025-12-01", to: "2025-12-02" },
+    { id: 9, client: "Sam Wilson", hall: "Dream Hall", phone: "0798823456", from: "2025-12-01", to: "2025-12-02" },
+    { id: 10, client: "Sam Wilson", hall: "Dream Hall", phone: "0798823456", from: "2025-12-01", to: "2025-12-02" },
+
   ]);
 
   const [history, setHistory] = useState([

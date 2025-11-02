@@ -226,4 +226,35 @@
   }
 }
 
+/* === Responsive Layout for Mobile Screens === */
+@media (max-width: 600px) {
+  .halls-container {
+    grid-template-columns: repeat(2, 1fr); /* two cards per row */
+    gap: 12px;
+  }
 
+  .add-hall-box {
+    max-width: 160px; /* smaller card width */
+    height: 250px;    /* shorter height */
+    padding: 10px;
+  }
+
+  .section-two {
+    padding: 10px 15px;
+    margin: 10px;
+  }
+
+  .section-header h2 {
+    font-size: 1rem;
+    padding-left: 10px;
+  }
+
+  .see-all {
+    font-size: 0.8rem;
+    padding: 5px 10px;
+  }
+
+  .add-hall-link {
+    font-size: 0.85rem;
+  }
+}
