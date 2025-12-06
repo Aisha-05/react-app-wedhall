@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./HallList.css";
+import "../HallList/HallList.css";
 
 function EditHallPopup({ hall, setHalls, onClose }) {
   const [formData, setFormData] = useState({
@@ -45,11 +45,11 @@ function EditHallPopup({ hall, setHalls, onClose }) {
   };
 
   return (
-    <div className="popup-overlay">
-      <div className="popup-content">
+    <div className="halllist-popup-overlay">
+      <div className="halllist-popup-content">
         <h2>Edit Hall</h2>
 
-        <form onSubmit={handleSubmit} className="popup-form">
+        <form onSubmit={handleSubmit} className="halllist-popup-form">
           <label>Hall Name</label>
           <input name="name" value={formData.name} onChange={handleInputChange} required />
 
@@ -76,14 +76,14 @@ function EditHallPopup({ hall, setHalls, onClose }) {
           <input type="file" accept="image/*" onChange={handleImageUpload} />
 
           {formData.image && (
-            <div className="image-preview">
+            <div className="halllist-image-preview">
               <img src={formData.image} alt="Preview" />
             </div>
           )}
 
-          <div className="popup-buttons">
-            <button type="submit" className="save-btn">Save Changes</button>
-            <button type="button" className="cancel-btn" onClick={onClose}>
+          <div className="halllist-popup-buttons">
+            <button type="submit" className="halllist-save-btn">Save Changes</button>
+            <button type="button" className="halllist-cancel-btn" onClick={onClose}>
               Cancel
             </button>
           </div>

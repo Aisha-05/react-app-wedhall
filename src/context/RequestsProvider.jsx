@@ -1,7 +1,6 @@
 // src/context/RequestsProvider.jsx
-import React, { createContext, useState, useContext } from "react";
-
-const RequestsContext = createContext();
+import React, { useState } from "react";
+import { RequestsContext } from "./RequestsContext";
 
 export const RequestsProvider = ({ children }) => {
   const [requests, setRequests] = useState([
@@ -41,4 +40,4 @@ export const RequestsProvider = ({ children }) => {
   );
 };
 
-export const useRequests = () => useContext(RequestsContext);
+// `useRequests` moved to `src/context/useRequests.js` to satisfy react-refresh rule

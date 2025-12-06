@@ -1,5 +1,5 @@
 /* === Owner Profile Card === */
-.owner-card {
+.ownercard-owner-card {
   background-color: #ffffff;
   border-radius: 16px;
   /* border: 1px solid #9D735B; */
@@ -11,7 +11,7 @@
   text-align: center;
 }
 
-.owner-img {
+.ownercard-owner-img {
   width: 100px;
   height: 100px;
   border-radius: 50%;
@@ -19,19 +19,19 @@
   margin-bottom: 8px;
 }
 
-.owner-card h3 {
+.ownercard-owner-card h3 {
   font-family: "Poppins", sans-serif;
   margin: 3px 0;
   color: #825e39;
 }
 
-.owner-card p {
+.ownercard-owner-card p {
   color: #835d37;
   font-size: 0.9rem;
   margin: 0;
 }
 
-.edit-btn {
+.ownercard-edit-btn {
   margin-top: 5px;
   background-color: #9D735B;
   border: none;
@@ -42,11 +42,11 @@
   font-family: "Poppins", sans-serif;
 }
 
-.edit-btn:hover {
+.ownercard-edit-btn:hover {
   background-color: #c49a6c;
 }
 
-.owner-card .rate {
+.ownercard-owner-card .ownercard-rate {
   margin-top: 4px;
   margin-bottom: 8px;
   display: flex;

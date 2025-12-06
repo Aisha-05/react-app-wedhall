@@ -1,10 +1,10 @@
-// src/pages/RequestsPage.jsx
+// src/pages/aishaPages/RequestsPage/RequestsPage.jsx
 import React, { useState } from "react";
-import Topbar from "../Components/Topbar/Topbar";
-import "./RequestsHistory.css";
+import Topbar from "../../../components/aishaComponents/Topbar/Topbar";
+import "../../RequestsHistory.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheckCircle, faTimesCircle, faSort } from "@fortawesome/free-solid-svg-icons";
-import { useRequests } from "../context/useRequests";
+import { useRequests } from "../../../context/useRequests";
 
 function RequestsPage({ owner }) {
   const { requests, handleAccept, handleReject } = useRequests();

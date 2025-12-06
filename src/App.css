@@ -5,17 +5,24 @@ body {
   padding: 0;
 }
 
-.app-container {
+.app-main-container {
   display: flex;
   flex-direction: column;
   height: 100vh;
   overflow: hidden; /* prevent whole-page scrolling */
 }
 
-.dashboard {
+.app-main-dashboard {
   flex: 1;
   overflow-y: auto; /* only dashboard content scrolls */
   padding: 20px;
+}
+
+.app-owner-section {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-bottom: 30px;
 }
 
 /* For Chrome, Edge, Safari */

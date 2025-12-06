@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import OneHall from "./OneHall";
+import OneHall from "../OneHall/OneHall";
 import "./HallList.css";
 
 function HallsList({ halls = [], setHalls, limit = 4 }) {
@@ -53,30 +53,30 @@ function HallsList({ halls = [], setHalls, limit = 4 }) {
   };
 
   return (
-    <div className="halls-section">
-      <div className="section-header">
+    <div className="halllist-section-two">
+      <div className="halllist-section-header">
         <h2>My Halls</h2>
         {halls.length > 4 && (
-          <Link to="/halls" className="see-all">See All</Link>
+          <Link to="/halls" className="halllist-see-all">See All</Link>
         )}
       </div>
 
-      <div className="halls-container">
+      <div className="halllist-halls-container">
         {limitedHalls.map((hall) => (
           <OneHall key={hall.id} hall={hall} setHalls={setHalls} />
         ))}
 
-        <div className="add-hall-box" onClick={() => setShowForm(true)}>
-          <span className="add-hall-link">+ Add New Hall</span>
+        <div className="halllist-add-hall-box" onClick={() => setShowForm(true)}>
+          <span className="halllist-add-hall-link">+ Add New Hall</span>
         </div>
       </div>
 
       {showForm && (
-        <div className="popup-overlay">
-          <div className="popup-content">
+        <div className="halllist-popup-overlay">
+          <div className="halllist-popup-content">
             <h2>Add New Hall</h2>
 
-            <form onSubmit={handleSubmit} className="popup-form">
+            <form onSubmit={handleSubmit} className="halllist-popup-form">
               <label>Hall Name</label>
               <input name="name" value={formData.name} onChange={handleInputChange} required />
 
@@ -103,14 +103,14 @@ function HallsList({ halls = [], setHalls, limit = 4 }) {
               <input type="file" accept="image/*" onChange={handleImageUpload} />
 
               {formData.image && (
-                <div className="image-preview">
+                <div className="halllist-image-preview">
                   <img src={formData.image} alt="Preview" />
                 </div>
               )}
 
-              <div className="popup-buttons">
-                <button type="submit" className="save-btn">Save</button>
-                <button type="button" className="cancel-btn" onClick={() => setShowForm(false)}>
+              <div className="halllist-popup-buttons">
+                <button type="submit" className="halllist-save-btn">Save</button>
+                <button type="button" className="halllist-cancel-btn" onClick={() => setShowForm(false)}>
                   Cancel
                 </button>
               </div>

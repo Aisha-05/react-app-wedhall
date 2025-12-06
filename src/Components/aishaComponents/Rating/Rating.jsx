@@ -1,6 +1,6 @@
 import React from "react";
 
-const Rating = ({ rating, readOnly = false }) => {
+const Rating = ({ rating }) => {
   const stars = [];
   const rounded = Math.round(rating * 2) / 2; // e.g. 4.5 → 4.5
 
@@ -48,14 +48,10 @@ const Rating = ({ rating, readOnly = false }) => {
           .rate i {
             color: #FFD700;
             font-size: 1.1rem;
-            line-height: 1;
-            vertical-align: middle;
-            width: 18px;
           }
         `}
       </style>
-
-      <div className="rate" data-readonly={readOnly}>{stars}</div>
+      <div className="rate">{stars}</div>
     </>
   );
 };

@@ -1,18 +1,22 @@
 import React, { useState } from "react";
-import ReactDOM from "react-dom";
-import "./HallList/HallList.css";
+import "../HallList/HallList.css";
 
-const AddHallModal = ({ onClose, onSave }) => {
+function EditHallPopup({ hall, setHalls, onClose }) {
   const [formData, setFormData] = useState({
-    name: "",
-    location: "",
-    price: "",
-    description: "",
-    image: "",
+    name: hall.name,
+    location: hall.location,
+    price: hall.price.replace(/\D/g, ""), // remove non-numeric for editing
+    description: hall.description,
+    image: hall.image,
   });
 
-  const handleChange = (e) => {
+  const handleInputChange = (e) => {
     const { name, value } = e.target;
+
+    if (name === "price") {
+      if (!/^\d*$/.test(value)) return; // digits only
+    }
+
     setFormData({ ...formData, [name]: value });
   };
 
@@ -29,58 +33,43 @@ const AddHallModal = ({ onClose, onSave }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!formData.name || !formData.location) return;
 
-    const newHall = {
-      id: Date.now(),
-      ...formData,
-      rating: 0,
-    };
-
-    onSave(newHall);
+    setHalls((prevHalls) =>
+      prevHalls.map((h) =>
+        h.id === hall.id
+          ? { ...h, ...formData, price: `${formData.price} DZD` }
+          : h
+      )
+    );
+    onClose();
   };
 
-  // 🧠 Use React Portal to render outside other components
-  return ReactDOM.createPortal(
+  return (
     <div className="halllist-popup-overlay">
       <div className="halllist-popup-content">
-        <h2>Add New Hall</h2>
+        <h2>Edit Hall</h2>
 
         <form onSubmit={handleSubmit} className="halllist-popup-form">
           <label>Hall Name</label>
-          <input
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-            placeholder="e.g. La Belle Étoile"
-          />
+          <input name="name" value={formData.name} onChange={handleInputChange} required />
 
           <label>Location</label>
-          <input
-            name="location"
-            value={formData.location}
-            onChange={handleChange}
-            required
-            placeholder="e.g. Algiers, Hydra"
-          />
+          <input name="location" value={formData.location} onChange={handleInputChange} required />
 
-          <label>Price</label>
+          <label>Price (DZD)</label>
           <input
-            type="text"
             name="price"
             value={formData.price}
-            onChange={handleChange}
-            placeholder="e.g. 1500 DZD"
+            onChange={handleInputChange}
+            placeholder="Digits only"
           />
 
           <label>Description</label>
           <textarea
             name="description"
             value={formData.description}
-            onChange={handleChange}
+            onChange={handleInputChange}
             rows="3"
-            placeholder="Brief description about the hall..."
           ></textarea>
 
           <label>Upload Image</label>
@@ -93,16 +82,15 @@ const AddHallModal = ({ onClose, onSave }) => {
           )}
 
           <div className="halllist-popup-buttons">
-            <button type="submit" className="halllist-save-btn">Save</button>
+            <button type="submit" className="halllist-save-btn">Save Changes</button>
             <button type="button" className="halllist-cancel-btn" onClick={onClose}>
               Cancel
             </button>
           </div>
         </form>
       </div>
-    </div>,
-    document.body 
+    </div>
   );
-};
+}
 
-export default AddHallModal;
+export default EditHallPopup;

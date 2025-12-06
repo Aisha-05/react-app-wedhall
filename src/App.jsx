@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Dashboard from "./pages/Dashboard";
+import Dashboard from "./pages/aishaPages/Dashboard/Dashboard";
 import { RequestsProvider } from "./context/RequestsProvider";
-import RequestsPage from "./pages/RequestsPage";
-import HistoryPage from "./pages/HistoryPage";
+import RequestsPage from "./pages/aishaPages/RequestsPage/RequestsPage";
+import HistoryPage from "./pages/aishaPages/HistoryPage/HistoryPage";
 import profilePic from "./images/profilepic.jpg";
 
 function App() {

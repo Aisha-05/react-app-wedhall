@@ -39,8 +39,8 @@ function ProfilePopup({ owner, setOwner, onClose }) {
   };
 
   return (
-    <div className="popup-overlay">
-      <div className="popup">
+    <div className="profilepopup-popup-overlay">
+      <div className="profilepopup-popup">
         <h2>Edit Profile</h2>
 
         <label>Full Name</label>
@@ -51,7 +51,7 @@ function ProfilePopup({ owner, setOwner, onClose }) {
           onChange={handleChange}
           placeholder="Enter your full name"
         />
-        {errors.fullName && <p className="error">{errors.fullName}</p>}
+        {errors.fullName && <p className="profilepopup-error">{errors.fullName}</p>}
 
         <label>Email</label>
         <input
@@ -71,7 +71,7 @@ function ProfilePopup({ owner, setOwner, onClose }) {
           placeholder="Digits only"
           maxLength="10"
         />
-        {errors.phoneNum && <p className="error">{errors.phoneNum}</p>}
+        {errors.phoneNum && <p className="profilepopup-error">{errors.phoneNum}</p>}
 
         <label>Wilaya</label>
         <input
@@ -84,9 +84,9 @@ function ProfilePopup({ owner, setOwner, onClose }) {
         <label>Profile Picture</label>
         <input type="file" accept="image/*" onChange={handleImageChange} />
 
-        <div className="popup-buttons">
-          <button onClick={handleSave} className="save-btn">Save</button>
-          <button onClick={onClose} className="cancel-btn">Cancel</button>
+        <div className="profilepopup-popup-buttons">
+          <button onClick={handleSave} className="profilepopup-save-btn">Save</button>
+          <button onClick={onClose} className="profilepopup-cancel-btn">Cancel</button>
         </div>
       </div>
     </div>

@@ -1,5 +1,5 @@
 /* === Overlay === */
-.popup-overlay {
+.profilepopup-popup-overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -13,7 +13,7 @@
 }
 
 /* === Popup Box === */
-.popup {
+.profilepopup-popup {
   background: #fff;
   padding: 28px 30px;
   border-radius: 16px;
@@ -25,7 +25,7 @@
 }
 
 /* === Title === */
-.popup h2 {
+.profilepopup-popup h2 {
   text-align: center;
   color: #825e39;
   font-weight: 600;
@@ -33,16 +33,16 @@
 }
 
 /* === Form Layout === */
-.popup label {
+.profilepopup-popup label {
   display: block;
   font-weight: 500;
   color: #6c4a2c;
   margin-bottom: 6px;
 }
 
-.popup input[type="text"],
-.popup input[type="email"],
-.popup input[type="file"] {
+.profilepopup-popup input[type="text"],
+.profilepopup-popup input[type="email"],
+.profilepopup-popup input[type="file"] {
   width: 100%;
   padding: 8px 10px;
   margin-bottom: 14px;
@@ -53,13 +53,13 @@
   transition: border-color 0.3s, box-shadow 0.3s;
 }
 
-.popup input:focus {
+.profilepopup-popup input:focus {
   border-color: #9d735b;
   box-shadow: 0 0 4px rgba(157, 115, 91, 0.3);
 }
 
 /* === Profile Picture Upload === */
-.popup input[type="file"] {
+.profilepopup-popup input[type="file"] {
   padding: 6px;
   background-color: #faf7f5;
   border: 1px dashed #c7a98f;
@@ -67,15 +67,15 @@
 }
 
 /* === Buttons === */
-.popup-buttons {
+.profilepopup-popup-buttons {
   display: flex;
   justify-content: flex-end;
   gap: 12px;
   margin-top: 10px;
 }
 
-.save-btn,
-.cancel-btn {
+.profilepopup-save-btn,
+.profilepopup-cancel-btn {
   border: none;
   border-radius: 30px;
   padding: 8px 18px;
@@ -85,21 +85,21 @@
   transition: all 0.3s ease;
 }
 
-.save-btn {
+.profilepopup-save-btn {
   background-color: #825e39;
   color: white;
 }
 
-.save-btn:hover {
+.profilepopup-save-btn:hover {
   background-color: #6c4a2c;
 }
 
-.cancel-btn {
+.profilepopup-cancel-btn {
   background-color: #ddd;
   color: #333;
 }
 
-.cancel-btn:hover {
+.profilepopup-cancel-btn:hover {
   background-color: #bbb;
 }
 

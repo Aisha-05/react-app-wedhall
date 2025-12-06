@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
-import "./HallList/HallList.css";
+import "../HallList/HallList.css";
 
 const AddHallModal = ({ onClose, onSave }) => {
   const [formData, setFormData] = useState({

@@ -11,7 +11,7 @@
 
 /* ===== Left section (Logo) ===== */
 .topbar-left .logo {
-  width: 100%;
+  width: auto; /* was 100% which pushed the nav off-screen */
   height: 60px;
   display: flex;
   align-items: center;
@@ -32,16 +32,20 @@
   display: flex;
   align-items: center;
   gap: 24px;
+  position: relative; /* anchor dropdown to this container */
 }
 
 /* ===== Navbar ===== */
-.navbar {
+.topbar-navbar {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
-.nav-item a{
+/* Hamburger menu toggle (hidden on desktop) */
+/* hamburger removed - avatar is primary trigger on small screens */
+
+.topbar-nav-item a{
   background: none;
   text-decoration: none;
   font-size: 14px;
@@ -53,12 +57,12 @@
   transition: color 0.3s ease;
 }
 
-.nav-item a:hover {
+.topbar-nav-item a:hover {
   background: #f5f5dc32;
 }
 
 /* ===== User area (avatar + name) ===== */
-.user-area {
+.topbar-user-area {
   display: flex;
   align-items: center;
   gap: 12px;
@@ -72,14 +76,14 @@
   border: 1.5px solid #a58469;
 }
 
-.user-text h4 {
+.topbar-user-text h4 {
   font-size: 13px;
   color: #fff8f8;
   margin-top: 10px;
   margin-bottom: 0;
 }
 
-.user-text p {
+.topbar-user-text p {
   font-size: 12px;
   font-weight: 400;
   color: #0000009f;
@@ -87,7 +91,7 @@
 }
 
 /* === Logout Confirmation Popup === */
-.logout-overlay {
+.topbar-logout-overlay {
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.45);
@@ -95,37 +99,37 @@
   align-items: center;
   justify-content: center;
   z-index: 3000;
-  animation: fadeIn 0.25s ease;
+  animation: topbar-fadeIn 0.25s ease;
 }
 
-.logout-box {
+.topbar-logout-box {
   background: #fff;
   border-radius: 12px;
   padding: 24px 30px;
   max-width: 360px;
   text-align: center;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-  animation: fadeIn 0.25s ease;
+  animation: topbar-fadeIn 0.25s ease;
 }
 
-.logout-box h4 {
+.topbar-logout-box h4 {
   color: #825e39;
   margin-bottom: 10px;
   font-size: 1.2rem;
 }
 
-.logout-box p {
+.topbar-logout-box p {
   color: #4a3a2a;
   margin-bottom: 20px;
 }
 
-.logout-buttons {
+.topbar-logout-buttons {
   display: flex;
   justify-content: center;
   gap: 15px;
 }
 
-.logout-buttons .yes {
+.topbar-logout-buttons .yes {
   background: #e74c3c;
   color: white;
   border: none;
@@ -136,11 +140,11 @@
   transition: 0.3s;
 }
 
-.logout-buttons .yes:hover {
+.topbar-logout-buttons .yes:hover {
   background: #c0392b;
 }
 
-.logout-buttons .no {
+.topbar-logout-buttons .no {
   background: #ddd;
   color: #333;
   border: none;
@@ -151,8 +155,12 @@
   transition: 0.3s;
 }
 
+.topbar-logout-buttons .no:hover {
+  background: #bbb;
+}
+
 /* === Log Out button styled like other nav items === */
-.logout-btn {
+.topbar-logout-btn {
   background: none;
   text-decoration: none;
   font-size: 14px;
@@ -165,16 +173,45 @@
   display: inline-block;
 }
 
-.logout-btn:hover {
-  background: #f5f5dc32; /* same hover as nav-item a:hover */
-}
-
-.logout-btn:hover {
+.topbar-logout-btn:hover {
+  background: #f5f5dc32; /* same hover as .topbar-nav-item a:hover */
   color: #c0392b;
 }
 
 /* Reuse fadeIn animation */
-@keyframes fadeIn {
+@keyframes topbar-fadeIn {
   from { opacity: 0; transform: translateY(-10px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive rules - Mobile Only */
+@media (max-width: 768px) {
+  .topbar {
+    padding: 0 12px;
+  }
+
+  .topbar-navbar {
+    display: none; /* hidden by default on mobile */
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    background: rgba(157, 115, 91, 0.98);
+    padding: 8px 12px;
+    border-radius: 8px;
+    flex-direction: column;
+    gap: 6px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    z-index: 1500;
+    min-width: 160px;
+  }
+
+  .topbar-navbar.open {
+    display: flex;
+  }
+
+  .topbar-nav-item a, .topbar-logout-btn {
+    display: block;
+    padding: 8px 10px;
+    font-size: 13px;
+  }
 }

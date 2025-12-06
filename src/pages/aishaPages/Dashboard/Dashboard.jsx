@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import "../App.css";
+import "../../../App.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Topbar from "../Components/Topbar/Topbar";
-import OwnerProfileCard from "../Components/OwnerProfileCard/OwnerProfileCard";
-import HallList from "../Components/HallList/HallList";
-import ProfilePopup from "../Components/ProfilePopup/ProfilePopup";
+import Topbar from "../../../components/aishaComponents/Topbar/Topbar";
+import OwnerProfileCard from "../../../components/aishaComponents/OwnerProfileCard/OwnerProfileCard";
+import HallList from "../../../components/aishaComponents/HallList/HallList";
+import ProfilePopup from "../../../components/aishaComponents/ProfilePopup/ProfilePopup";
 
 function Dashboard({ owner, setOwner }) {
 
@@ -44,7 +44,7 @@ function Dashboard({ owner, setOwner }) {
     },
     {
       id: 4,
-      name: "Le Rêve d’Or",
+      name: "Le Rêve d'Or",
       location: "Oran",
       price: "1,500 DZD",
       rating: 3.5,

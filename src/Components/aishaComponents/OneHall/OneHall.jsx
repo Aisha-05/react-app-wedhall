@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-import Rating from "./Rating";
-import EditHallPopup from "./EditHallPopup"; // 👈 import it
+import Rating from "../Rating/Rating";
+import EditHallPopup from "./EditHallPopup";
 import "./OneHall.css";
 
 const OneHall = ({ hall, setHalls }) => {
@@ -10,14 +10,14 @@ const OneHall = ({ hall, setHalls }) => {
 
   return (
     <>
-      <Card className="hall-card">
-        <Card.Img variant="top" src={hall.image} className="hall-image" />
-        <Card.Body className="hall-content">
-          <div className="tirating">
-            <Card.Title className="hall-title">{hall.name}</Card.Title>
+      <Card className="onehall-hall-card">
+        <Card.Img variant="top" src={hall.image} className="onehall-hall-image" />
+        <Card.Body className="onehall-hall-content">
+          <div className="onehall-tirating">
+            <Card.Title className="onehall-hall-title">{hall.name}</Card.Title>
           </div>
 
-          <Card.Text as="div" className="hall-location">
+          <Card.Text as="div" className="onehall-hall-location">
             <div>
               <i className="fa-solid fa-location-dot"></i> {hall.location}
             </div>
@@ -26,14 +26,14 @@ const OneHall = ({ hall, setHalls }) => {
             </div>
           </Card.Text>
 
-          <div className="hall-price">{hall.price}</div>
+          <div className="onehall-hall-price">{hall.price}</div>
 
-          <div className="hall-description">
+          <div className="onehall-hall-description">
             <Card.Text title={hall.description}>{hall.description}</Card.Text>
           </div>
 
-          <div className="hall-btn-container">
-            <Button className="hall-btn" onClick={() => setShowEdit(true)}>
+          <div className="onehall-hall-btn-container">
+            <Button className="onehall-hall-btn" onClick={() => setShowEdit(true)}>
               Edit
             </Button>
           </div>

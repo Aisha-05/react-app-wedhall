@@ -1,5 +1,5 @@
 import React from "react";
-import Topbar from "../Components/Topbar";
+import Topbar from "../Components/Topbar/Topbar";
 import "../App.css";
 
 function halls(){
